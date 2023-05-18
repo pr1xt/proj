@@ -1,0 +1,16 @@
+# m = open('C:\\smt\\Wfiled.txt', 'a', encoding="utf-8")
+# m.writelines(input())
+# m.close()
+# input_file = open("C:\\smt\\Wfiled.txt", "r")
+# print(input_file.read())
+m = open("C:\\smt\\imionanazwiska.txt", "r", encoding="utf-8")
+lines = m.read().splitlines()
+nms = open("C:\\smt\\names.txt", "w", encoding="utf-8")
+snms = open("C:\\smt\\surnames.txt", "w", encoding="utf-8")
+for i in range(len(lines)):
+    nms.writelines(f"{lines[i][:lines[i].find(' ')]} \n")
+    snms.writelines(f"{(lines[i][lines[i].find(' ')+1:])} \n")
+m.close()
+nms.close()
+snms.close()
+
